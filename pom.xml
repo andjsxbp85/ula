@@ -1,0 +1,255 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>org.example</groupId>
+    <artifactId>ula</artifactId>
+    <version>1.0-SNAPSHOT</version>
+    <packaging>jar</packaging>
+
+    <name>ULA Recruitment Process</name>
+
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <serenity.version>2.3.8</serenity.version>
+        <serenity.cucumber6.version>2.3.6</serenity.cucumber6.version>
+        <serenity-report.version>2.3.8</serenity-report.version>
+        <cucumber.version>6.9.0</cucumber.version>
+        <junit.version>4.13.1</junit.version>
+        <rest-assured-json-schema-validator.version>4.2.0</rest-assured-json-schema-validator.version>
+        <VmTemplate.path>src/test/resources/cucumber-serenity-runner.vm</VmTemplate.path>
+        <JSch.version>0.1.55</JSch.version>
+        <BigQuery.version>1.125.0</BigQuery.version>
+        <MySQL.version>8.0.22</MySQL.version>
+        <Postgre.version>42.2.18</Postgre.version>
+        <Aspose.version>20.8</Aspose.version>
+        <POI.version>4.1.2</POI.version>
+        <temyers.version>5.0.0</temyers.version>
+        <maven.version>3.8.0</maven.version>
+        <parallelChannel>1</parallelChannel>
+        <maxRam>-Xmx512m</maxRam>
+    </properties>
+
+    <!-- java csv to excel repo >> see dependency group id com.aspose dengan artifact aspose-cells -->
+    <repositories>
+        <repository>
+            <id>AsposeJavaAPI</id>
+            <name>Aspose Java API</name>
+            <url>http://repository.aspose.com/repo/</url>
+        </repository>
+    </repositories>
+
+    <dependencies>
+        <!-- Report HTML Test: Serenity Report -->
+        <dependency>
+            <groupId>net.serenity-bdd</groupId>
+            <artifactId>serenity-core</artifactId>
+            <version>${serenity.version}</version>
+            <scope>test</scope>
+            <exclusions>
+                <exclusion>
+                    <groupId>io.cucumber</groupId>
+                    <artifactId>cucumber-core</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+        <!-- Report Cucumber: Serenity Cucumber -->
+        <dependency>
+            <groupId>net.serenity-bdd</groupId>
+            <artifactId>serenity-cucumber6</artifactId>
+            <version>${serenity.cucumber6.version}</version>
+            <scope>test</scope>
+        </dependency>
+        <!-- Report HTML API: Serenity Rest Assured -->
+        <dependency>
+            <groupId>net.serenity-bdd</groupId>
+            <artifactId>serenity-rest-assured</artifactId>
+            <version>${serenity.version}</version>
+            <scope>test</scope>
+            <exclusions>
+                <exclusion>
+                    <groupId>io.cucumber</groupId>
+                    <artifactId>cucumber-core</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+        <!-- BDD Gherkin: Cucumber Java -->
+        <dependency>
+            <groupId>io.cucumber</groupId>
+            <artifactId>cucumber-java</artifactId>
+            <version>${cucumber.version}</version>
+        </dependency>
+        <!-- Assertion and Test: Cucumber Junit -->
+        <dependency>
+            <groupId>io.cucumber</groupId>
+            <artifactId>cucumber-junit</artifactId>
+            <version>${cucumber.version}</version>
+        </dependency>
+        <!-- Logger -->
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-simple</artifactId>
+            <version>1.7.7</version>
+            <scope>test</scope>
+        </dependency>
+        <!-- Parallel Runner: Junit -->
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>${junit.version}</version>
+            <scope>test</scope>
+        </dependency>
+        <!-- Rest Assured: Json Schema Validator -->
+        <dependency>
+            <groupId>io.rest-assured</groupId>
+            <artifactId>json-schema-validator</artifactId>
+            <version>${rest-assured-json-schema-validator.version}</version>
+            <scope>test</scope>
+        </dependency>
+        <!-- Shell through SSH: JSCH -->
+        <dependency>
+            <groupId>com.jcraft</groupId>
+            <artifactId>jsch</artifactId>
+            <version>${JSch.version}</version>
+        </dependency>
+        <!-- DB BigQuery -->
+        <dependency>
+            <groupId>com.google.cloud</groupId>
+            <artifactId>google-cloud-bigquery</artifactId>
+            <version>${BigQuery.version}</version>
+        </dependency>
+        <!-- DB MySQL -->
+        <dependency>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+            <version>${MySQL.version}</version>
+        </dependency>
+        <!-- DB Postgre SQL -->
+        <dependency>
+            <groupId>org.postgresql</groupId>
+            <artifactId>postgresql</artifactId>
+            <version>${Postgre.version}</version>
+        </dependency>
+        <!-- CSV to Excel converter !Kekuranganya ada watermark! -->
+        <dependency>
+            <groupId>com.aspose</groupId>
+            <artifactId>aspose-cells</artifactId>
+            <version>${Aspose.version}</version>
+        </dependency>
+        <!-- Excel writer, reader, and editor: Apache POI !Can be used to create csv to excel converter by myself! -->
+        <dependency>
+            <groupId>org.apache.poi</groupId>
+            <artifactId>poi</artifactId>
+            <version>${POI.version}</version>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <plugins>
+            <!-- JUnit Parallel Thread: https://cucumber.io/docs/guides/parallel-execution/#junit -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <version>2.22.1</version>
+                <configuration>
+                    <skip>true</skip>
+                </configuration>
+            </plugin>
+            <!-- TestNG Parallel Thread: https://cucumber.io/docs/guides/parallel-execution/#testng -->
+            <plugin>
+                <artifactId>maven-failsafe-plugin</artifactId>
+                <version>2.22.2</version>
+                <configuration>
+                    <includes>
+                        <!-- <include>**/*TestSuite.java</include> -->
+                        <include>**/*IT.java</include>
+                    </includes>
+                    <!-- Allowed Max Ram-->
+                    <argLine>${maxRam}</argLine>
+                    <parallel>classes</parallel>
+                    <!-- Num Of Channel-->
+                    <threadCount>${parallelChannel}</threadCount>
+                    <perCoreThreadCount>false</perCoreThreadCount>
+                </configuration>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>integration-test</goal>
+                            <goal>verify</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>${maven.version}</version>
+                <configuration>
+                    <source>1.8</source>
+                    <target>1.8</target>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>net.serenity-bdd.maven.plugins</groupId>
+                <artifactId>serenity-maven-plugin</artifactId>
+                <version>${serenity.version}</version>
+                <configuration>
+                    <reports>single-page-html,json-summary</reports>
+                </configuration>
+                <executions>
+                    <execution>
+                        <id>serenity-reports</id>
+                        <phase>post-integration-test</phase>
+                        <goals>
+                            <goal>aggregate</goal>
+                        </goals>
+                    </execution>
+                </executions>
+                <dependencies>
+                    <dependency>
+                        <groupId>net.serenity-bdd</groupId>
+                        <artifactId>serenity-single-page-report</artifactId>
+                        <version>${serenity-report.version}</version>
+                    </dependency>
+                    <dependency>
+                        <groupId>net.serenity-bdd</groupId>
+                        <artifactId>serenity-json-summary-report</artifactId>
+                        <version>${serenity-report.version}</version>
+                    </dependency>
+                </dependencies>
+            </plugin>
+            <!-- Runner Generator for Parallel Test: https://github.com/temyers/cucumber-jvm-parallel-plugin/blob/master/readme_archive.md -->
+            <plugin>
+                <groupId>com.github.temyers</groupId>
+                <artifactId>cucumber-jvm-parallel-plugin</artifactId>
+                <version>${temyers.version}</version>
+                <executions>
+                    <execution>
+                        <id>generateRunners</id>
+                        <phase>generate-test-sources</phase>
+                        <goals>
+                            <goal>generateRunners</goal>
+                        </goals>
+                        <configuration>
+                            <!-- Mandatory -->
+                            <!-- List of package names to scan for glue code. -->
+                            <glue>
+                                <package>Tests</package>
+                            </glue>
+                            <tags>
+                                <!-- <tag>@BeneficiaryNameFlip</tag>-->
+                                <!--                                <tag>@RunTest</tag>-->
+                                <!--                                <tag>@KoperasiTelkomsel</tag>-->
+                                <tag>not @sequence</tag>
+                            </tags>
+                            <parallelScheme>FEATURE</parallelScheme>
+                            <customVmTemplate>${VmTemplate.path}</customVmTemplate>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
+</project>

@@ -1,0 +1,21 @@
+#parse("/array.java.vm")
+#if ($packageName)
+package $packageName;
+
+#end##
+import io.cucumber.junit.CucumberOptions;
+import net.serenitybdd.cucumber.CucumberWithSerenity;
+import org.junit.runner.RunWith;
+
+@RunWith(CucumberWithSerenity.class)
+@CucumberOptions(
+    strict = $strict,
+    features = {"$featureFile"},
+    plugin = #stringArray($plugins),
+    monochrome = $monochrome,
+    #if(!$featureFile.contains(".feature:") && $tags)
+    tags = "#foreach ($foo in $tags)$foo#if(!$foreach.last) and #end#end"
+    #end
+)
+public class $className {
+}

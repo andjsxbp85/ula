@@ -1,0 +1,220 @@
+{
+  "report": {
+    "title": "Serenity Summary Report",
+    "tagCategoryTitle": "Category",
+    "version": "",
+    "date": "2021-12-23T04:04:16.527"
+  },
+  "results": {
+    "counts": {
+      "total": 10,
+      "success": 9,
+      "pending": 0,
+      "ignored": 0,
+      "skipped": 0,
+      "failure": 1,
+      "error": 0,
+      "compromised": 0
+    },
+    "percentages": {
+      "success": 90,
+      "pending": 0,
+      "ignored": 0,
+      "skipped": 0,
+      "failure": 10,
+      "error": 0,
+      "compromised": 0
+    },
+    "totalTestDuration": 236387,
+    "totalClockDuration": 217917,
+    "minTestDuration": 21718,
+    "maxTestDuration": 24579,
+    "averageTestDuration": 33769
+  },
+  "resultsByFeature": [
+    {
+      "featureName": "Register Amazon New User",
+      "scenarios": [
+        {
+          "title": "01 - User can go to register page from login page",
+          "result": "success",
+          "outcomes": [
+            {
+              "result": "success",
+              "description": "",
+              "errorMessage": ""
+            }
+          ]
+        },
+        {
+          "title": "02 - User can't sign up using existing email on database",
+          "result": "success",
+          "outcomes": [
+            {
+              "result": "success",
+              "description": "",
+              "errorMessage": ""
+            }
+          ]
+        },
+        {
+          "title": "03 - User can't continuing to next step of sign up if all mandatory field left empty",
+          "result": "success",
+          "outcomes": [
+            {
+              "result": "success",
+              "description": "",
+              "errorMessage": ""
+            }
+          ]
+        },
+        {
+          "title": "04 - User can't continuing to next step of sign up if only one of mandatory field left empty",
+          "result": "failure",
+          "outcomes": [
+            {
+              "result": "failure",
+              "description": "Example: {the_only_one_empty_field=password}",
+              "errorMessage": "Assertion error"
+            }
+          ]
+        },
+        {
+          "title": "05 - User can't continuing to next step of sign up if password and re-enter password doesnt match",
+          "result": "success",
+          "outcomes": [
+            {
+              "result": "success",
+              "description": "",
+              "errorMessage": ""
+            }
+          ]
+        },
+        {
+          "title": "06 - User input wrong email format",
+          "result": "success",
+          "outcomes": [
+            {
+              "result": "success",
+              "description": "",
+              "errorMessage": ""
+            }
+          ]
+        },
+        {
+          "title": "07 - User success create new account from sign up page",
+          "result": "success",
+          "outcomes": [
+            {
+              "result": "success",
+              "description": "",
+              "errorMessage": ""
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "frequentFailures": [
+    {
+      "name": "Assertion error",
+      "count": 1
+    }
+  ],
+  "unstableFeatures": [
+    {
+      "name": "Register Amazon New User",
+      "failurePercentage": 10
+    }
+  ],
+  "coverage": [
+    {
+      "tagTitle": "Feature",
+      "tagCoverages": [
+        {
+          "tagName": "Register Amazon New User",
+          "testCount": 10,
+          "successRate": "90%",
+          "counts": {
+            "total": 10,
+            "success": 9,
+            "pending": 0,
+            "ignored": 0,
+            "skipped": 0,
+            "failure": 1,
+            "error": 0,
+            "compromised": 0
+          },
+          "percentages": {
+            "success": 90,
+            "pending": 0,
+            "ignored": 0,
+            "skipped": 0,
+            "failure": 10,
+            "error": 0,
+            "compromised": 0
+          }
+        }
+      ]
+    }
+  ],
+  "tags": [
+    {
+      "tagType": "",
+      "tagResults": [
+        {
+          "tagName": "SignUp",
+          "count": 10
+        }
+      ]
+    },
+    {
+      "tagType": "TestCaseKey",
+      "tagResults": [
+        {
+          "tagName": "DESKTOP-T7",
+          "count": 1
+        },
+        {
+          "tagName": "DESKTOP-T8",
+          "count": 1
+        },
+        {
+          "tagName": "DESKTOP-T9",
+          "count": 1
+        },
+        {
+          "tagName": "DESKTOP-T10",
+          "count": 4
+        },
+        {
+          "tagName": "DESKTOP-T12",
+          "count": 4
+        },
+        {
+          "tagName": "DESKTOP-T11",
+          "count": 4
+        },
+        {
+          "tagName": "DESKTOP-T13",
+          "count": 4
+        },
+        {
+          "tagName": "DESKTOP-T14",
+          "count": 1
+        },
+        {
+          "tagName": "DESKTOP-T15",
+          "count": 1
+        },
+        {
+          "tagName": "DESKTOP-T16",
+          "count": 1
+        }
+      ]
+    }
+  ]
+}
+
+
+

@@ -1,0 +1,7 @@
+"Story","Title","Result","Date","Stability","Duration (s)"
+"Register Amazon New User","01 - User can go to register page from login page","SUCCESS","2021-12-23T04:04:16.527+07:00[Asia/Jakarta]","0.0","23.38"
+"Register Amazon New User","02 - User can't sign up using existing email on database","SUCCESS","2021-12-23T04:04:41.236+07:00[Asia/Jakarta]","0.0","22.58"
+"Register Amazon New User","03 - User can't continuing to next step of sign up if all mandatory field left empty","SUCCESS","2021-12-23T04:05:04.98+07:00[Asia/Jakarta]","0.0","22.6"
+"Register Amazon New User","05 - User can't continuing to next step of sign up if password and re-enter password doesnt match","SUCCESS","2021-12-23T04:07:06.344+07:00[Asia/Jakarta]","0.0","21.72"
+"Register Amazon New User","06 - User input wrong email format","SUCCESS","2021-12-23T04:07:29.235+07:00[Asia/Jakarta]","0.0","24.02"
+"Register Amazon New User","07 - User success create new account from sign up page","SUCCESS","2021-12-23T04:07:54.42+07:00[Asia/Jakarta]","0.0","24.58"
