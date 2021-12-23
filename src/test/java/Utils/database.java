@@ -1,8 +1,15 @@
 package Utils;
 
 public interface database {
-    //URL
+    //URL UI Test
     String _mainURL = "https://www.amazon.com/";
+
+    //URL API Test
+    String _baseURL = "https://fakestoreapi.com";
+    String _productEP = "/products";
+    String _productCategoryEP = "/products/category";
+    String _userEP = "/users";
+    String _carteEP = "/carts";
 
     //SSH & DB Credential
     //SSH
