@@ -1,5 +1,5 @@
 @getALLPorduct
-Feature: Login Amazon
+Feature: Get Product API
   As a User
   I want to get All product list from BE side
   So that FE side can visualize its response data

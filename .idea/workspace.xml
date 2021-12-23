@@ -5,64 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a0fb5d1c-4453-4858-ba32-12809689d144" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/test/java/API/AddNewProductAPI.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/API/GetProductsAPI.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/Steps/AddNewProductStep.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/Steps/GetProductsStep.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/Tests/AddNewProduct.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/Tests/GetPorducts.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/resources/JSONSchema/AddProduct/generalInvalidAddNewProduct.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/resources/JSONSchema/AddProduct/successAddNewProduct.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/resources/JSONSchema/GetProduct/successGetAllProduct.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/resources/JSONSchema/GetProduct/successGetProductByID.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/resources/features/fakestore/Add New Product.feature" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/resources/features/fakestore/Get Product.feature" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/serenity.properties" beforeDir="false" afterPath="$PROJECT_DIR$/serenity.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/Utils/APIFunct.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Utils/APIFunct.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/Utils/database.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Utils/database.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/resources/features/Sign In.feature" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/features/amazon/Sign In.feature" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/resources/features/Sign Up.feature" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/features/amazon/Sign Up.feature" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/cucumber-parallel/1.json" beforeDir="false" afterPath="$PROJECT_DIR$/target/cucumber-parallel/1.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/failsafe-reports/Parallel01IT.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/failsafe-reports/TEST-Parallel01IT.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/failsafe-reports/failsafe-summary.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/failsafe-reports/failsafe-summary.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/generated-test-sources/cucumber/Parallel01IT.java" beforeDir="false" afterPath="$PROJECT_DIR$/target/generated-test-sources/cucumber/Parallel01IT.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/generated-test-sources/cucumber/Parallel02IT.java" beforeDir="false" afterPath="$PROJECT_DIR$/target/generated-test-sources/cucumber/Parallel02IT.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-archiver/pom.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-archiver/pom.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/createdFiles.lst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/site/serenity/01f5288b80adbd3af52a8ed68a4a616d3164f750229f80da1ef344382d948835.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/site/serenity/01f5288b80adbd3af52a8ed68a4a616d3164f750229f80da1ef344382d948835.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/site/serenity/300777ddb6bb8b23597096b87fa44ffb0c5b36c84bceb467087fe6bd7334aa57.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/site/serenity/4713d9ff7d021efe1f15eba04f1da704d73309ee32f71d047653eb4956bad808.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/site/serenity/576946480b52ad056d6f5bddf874399c83582ecf90963cc074a14c70580e7d9f.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/site/serenity/576946480b52ad056d6f5bddf874399c83582ecf90963cc074a14c70580e7d9f.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/site/serenity/581ab2c0d9fb45f7777387cac46f3bb1c2eed714e399138376cf8faa189396f2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/site/serenity/6436085b745e5c3ad6667cf8d847fb8995fb342e08c8f820dbb7532ea0a79753.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/site/serenity/aa8d59aa10a63809f96e6a451a167a4226e387b86d40191b941749e5ad8508b1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/site/serenity/browser-chrome.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/site/serenity/build-info.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/site/serenity/build-info.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/site/serenity/capabilities.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/site/serenity/capabilities.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/site/serenity/d20b43c322e4a0ec798860266fb64b08509000908a9e05ea589c121598273bc6.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/site/serenity/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/site/serenity/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/site/serenity/results.csv" beforeDir="false" afterPath="$PROJECT_DIR$/target/site/serenity/results.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/site/serenity/serenity-summary.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/site/serenity/serenity-summary.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/site/serenity/serenity-summary.json" beforeDir="false" afterPath="$PROJECT_DIR$/target/site/serenity/serenity-summary.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/site/serenity/summary.txt" beforeDir="false" afterPath="$PROJECT_DIR$/target/site/serenity/summary.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/AndroidPages/HomePage.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/AndroidPages/RegisterPage.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/Parallel01IT.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/Parallel01IT.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/Parallel02IT.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/Parallel02IT.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/Steps/RegisStep.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/Tests/Regis.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/Utils/APIFunct.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/Utils/APIFunct.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/Utils/WebExe.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/Utils/WebExe.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/Utils/database.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/Utils/database.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/Utils/validation.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/Utils/validation.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/features/Register.feature" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/features/Sign In.feature" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/features/Sign Up.feature" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/ula-1.0-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/target/ula-1.0-SNAPSHOT.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/resources/features/fakestore/Add New Product.feature" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/features/fakestore/Add New Product.feature" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/resources/features/fakestore/Get Product.feature" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/features/fakestore/Get Product.feature" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -170,7 +117,7 @@
       <workItem from="1640161616508" duration="107000" />
       <workItem from="1640161743306" duration="3878000" />
       <workItem from="1640167556381" duration="1478000" />
-      <workItem from="1640169054048" duration="55592000" />
+      <workItem from="1640169054048" duration="58480000" />
     </task>
     <servers />
   </component>

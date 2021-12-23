@@ -1,5 +1,5 @@
-@getALLPorduct
-Feature: Create New Product
+@createNewProductAPI
+Feature: Create New Product API
   As a User
   I want to create new product from BE side
   So that the data can be recorded and can be used by FE team to build other environment
