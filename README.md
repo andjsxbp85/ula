@@ -46,9 +46,9 @@ $mvn clean verify
 ## Bug and Issues
 **Nb: For detailed report, please refer to serenity report**
 
-[MEDIUM] Tidak dapat menggunakan 'Limit' param pada endpoint Get User Details
+[MEDIUM] Text alert apabila user tidak mengisi field email, tidak konstan dan ada 2 kemungkinan perbedaan
 
-[ISSUE] Nama dapat menggunakan special character >> perlu didiskusikan kembali dengan PM
+[HIGH] NEED TO FIX SOON: Endpoint API at create new product isn't work well. All data is not really stored and recorded to database
 
 ## Test Coverage
 **71% Passed, 21% Failed, 7% Broken**
