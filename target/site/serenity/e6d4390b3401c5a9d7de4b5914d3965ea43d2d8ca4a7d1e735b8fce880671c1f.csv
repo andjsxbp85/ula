@@ -1,0 +1,8 @@
+"Story","Title","Result","Date","Stability","Duration (s)"
+"Create New Product API","01 - User success add new product with valid Json data","SUCCESS","2021-12-23T16:41:04.261+07:00[Asia/Jakarta]","0.0","1.32"
+"Create New Product API","02 - User will get error response if title value set as integer","FAILURE","2021-12-23T16:41:05.597+07:00[Asia/Jakarta]","0.0","0.86"
+"Create New Product API","03 - User will get error response if request body is empty json","FAILURE","2021-12-23T16:41:06.463+07:00[Asia/Jakarta]","0.0","0.88"
+"Create New Product API","04 - User will get error response if request body is empty object","FAILURE","2021-12-23T16:41:07.351+07:00[Asia/Jakarta]","0.0","0.99"
+"Create New Product API","05 - User will get error response if request body is null","ERROR","2021-12-23T16:41:08.354+07:00[Asia/Jakarta]","0.0","1.13"
+"Create New Product API","06 - User will get error response if price field set as String value","FAILURE","2021-12-23T16:41:09.491+07:00[Asia/Jakarta]","0.0","0.79"
+"Create New Product API","07 - Creating new product will be recorded in DB and can be access using get product method","ERROR","2021-12-23T16:41:10.293+07:00[Asia/Jakarta]","0.0","16.12"

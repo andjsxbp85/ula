@@ -1,0 +1,2 @@
+"Story","Title","Result","Date","Stability","Duration (s)"
+"Create New Product API","04 - User will get error response if request body is empty object","FAILURE","2021-12-23T16:41:07.351+07:00[Asia/Jakarta]","0.0","0.99"

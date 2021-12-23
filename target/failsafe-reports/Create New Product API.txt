@@ -1,0 +1,37 @@
+-------------------------------------------------------------------------------
+Test set: Create New Product API
+-------------------------------------------------------------------------------
+Tests run: 7, Failures: 0, Errors: 6, Skipped: 0, Time elapsed: 22.222 s <<< FAILURE! - in Create New Product API
+02 - User will get error response if title value set as integer(Create New Product API)  Time elapsed: 0.867 s  <<< ERROR!
+net.serenitybdd.core.exceptions.SerenityManagedException: 
+1 expectation failed.
+Expected status code <400> but was <200>.
+
+
+03 - User will get error response if request body is empty json(Create New Product API)  Time elapsed: 0.879 s  <<< ERROR!
+net.serenitybdd.core.exceptions.SerenityManagedException: 
+1 expectation failed.
+Expected status code <400> but was <200>.
+
+
+04 - User will get error response if request body is empty object(Create New Product API)  Time elapsed: 0.997 s  <<< ERROR!
+net.serenitybdd.core.exceptions.SerenityManagedException: 
+1 expectation failed.
+Expected status code <400> but was <200>.
+
+
+05 - User will get error response if request body is null(Create New Product API)  Time elapsed: 1.14 s  <<< ERROR!
+java.lang.ClassCastException: io.restassured.path.xml.XmlPath cannot be cast to java.lang.String
+
+06 - User will get error response if price field set as String value(Create New Product API)  Time elapsed: 0.793 s  <<< ERROR!
+net.serenitybdd.core.exceptions.SerenityManagedException: 
+1 expectation failed.
+Expected status code <400> but was <200>.
+
+
+07 - Creating new product will be recorded in DB and can be access using get product method(Create New Product API)  Time elapsed: 16.128 s  <<< ERROR!
+io.restassured.path.json.exception.JsonPathException: Failed to parse the JSON document
+Caused by: groovy.json.JsonException: 
+A JSON payload should start with an openning curly brace '{' or an openning square bracket '['.
+Instead, 'null' was found on line: 1, column: 1
+

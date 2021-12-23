@@ -1,0 +1,2 @@
+"Story","Title","Result","Date","Stability","Duration (s)"
+"Create New Product API","05 - User will get error response if request body is null","ERROR","2021-12-23T16:41:08.354+07:00[Asia/Jakarta]","0.0","1.13"

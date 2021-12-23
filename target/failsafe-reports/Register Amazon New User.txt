@@ -1,0 +1,7 @@
+-------------------------------------------------------------------------------
+Test set: Register Amazon New User
+-------------------------------------------------------------------------------
+Tests run: 10, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 201.109 s <<< FAILURE! - in Register Amazon New User
+04 - User can't continuing to next step of sign up if only one of mandatory field left empty #2(Register Amazon New User)  Time elapsed: 11.441 s  <<< ERROR!
+net.serenitybdd.core.exceptions.SerenityManagedException
+

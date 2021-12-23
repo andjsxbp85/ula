@@ -1,0 +1,7 @@
+-------------------------------------------------------------------------------
+Test set: Get Product API
+-------------------------------------------------------------------------------
+Tests run: 5, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 123.173 s <<< FAILURE! - in Get Product API
+03 - User can get product detail by ID(Get Product API)  Time elapsed: 20.51 s  <<< ERROR!
+net.serenitybdd.core.exceptions.SerenityManagedException
+

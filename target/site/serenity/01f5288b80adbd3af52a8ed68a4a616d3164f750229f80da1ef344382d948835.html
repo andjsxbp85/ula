@@ -1,0 +1,762 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8"/>
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Serenity Reports</title>
+
+    <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+<link rel="apple-touch-icon" sizes="57x57" href="apple-icon-57x57.png">
+<link rel="apple-touch-icon" sizes="60x60" href="apple-icon-60x60.png">
+<link rel="apple-touch-icon" sizes="72x72" href="apple-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="76x76" href="apple-icon-76x76.png">
+<link rel="apple-touch-icon" sizes="114x114" href="apple-icon-114x114.png">
+<link rel="apple-touch-icon" sizes="120x120" href="apple-icon-120x120.png">
+<link rel="apple-touch-icon" sizes="144x144" href="apple-icon-144x144.png">
+<link rel="apple-touch-icon" sizes="152x152" href="apple-icon-152x152.png">
+<link rel="apple-touch-icon" sizes="180x180" href="apple-icon-180x180.png">
+<link rel="icon" type="image/png" sizes="192x192"  href="android-icon-192x192.png">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="96x96" href="favicon-96x96.png">
+<link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+<meta name="msapplication-TileColor" content="#ffffff">
+<meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+<meta name="theme-color" content="#ffffff">
+<!--[if IE 7]>
+<!--<link rel="stylesheet" href="font-awesome/css/font-awesome-ie7.min.css">-->
+
+<link rel="stylesheet" type="text/css" href="fontawesome-free-5.7.2-web/css/all.min.css">
+<link rel="stylesheet" type="text/css" href="fontawesome-free-5.7.2-web/css/v4-shims.min.css">
+
+<!-- JQuery -->
+<script type="text/javascript" src="scripts/jquery-1.11.1.min.js"></script><link rel="stylesheet" type="text/css" href="chartist/chartist-plugin-tooltip/dist/chartist-plugin-tooltip.min.css">
+<link rel="stylesheet" type="text/css" href="chartist/dist/chartist.min.css">
+<script src="chartist/dist/chartist.min.js"></script>
+<script src="chartist/chartist-plugin-tooltip/dist/chartist-plugin-tooltip.min.js"></script>
+<!-- Required Stylesheets -->
+<link href="bootstrap-treeview/dist/bootstrap-treeview.min.css" rel="stylesheet">
+
+<!-- Required Javascript -->
+<script src="bootstrap-treeview/dist/bootstrap-treeview.min.js"></script><!-- DataTables -->
+<link type="text/css" href="datatables/1.10.20/datatables.min.css" rel="stylesheet" />
+<script type="text/javascript" src="datatables/1.10.20/datatables.min.js"></script>
+<script type="text/javascript" src="datatables/1.10.20/time-elapsed-dhms.js"></script>
+
+<link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+<script src="bootstrap/js/bootstrap.min.js"></script>
+
+<script type="text/javascript" src="datatables/1.10.20/datatables.bootstrap4.min.js"></script>
+<link type="text/css" href="datatables/1.10.20/datatables.bootstrap4.min.css" rel="stylesheet" />
+
+<script>
+    jQuery.fn.dataTable.ext.type.order['time-elapsed-dhms-pre'] = function(data) {
+
+        var matches = data.match(/^(\d+(?:\.\d+)?)\s*([a-z]+)/i);
+        var multipliers = {
+            ms: 1,
+            s: 1000,
+            m: 60000,
+            h: 3600000,
+            d: 86400000
+        };
+
+        if (matches) {
+            var multiplier = multipliers[matches[2].toLowerCase()];
+            return parseFloat(matches[1]) * multiplier;
+        } else {
+            return -1;
+        };
+    };
+</script>
+<link rel="stylesheet" href="css/core.css"/>
+<link rel="stylesheet" href="css/link.css"/>
+<link type="text/css" media="screen" href="css/screen.css" rel="Stylesheet"/><!-- JQuery-UI -->
+<link type="text/css" href="jqueryui/1.11.2-start/jquery-ui.min.css" rel="Stylesheet" />
+<script type="text/javascript" src="jqueryui/1.11.2-start/jquery-ui.min.js"></script><!-- DataTables -->
+<link type="text/css" href="datatables/1.10.20/datatables.min.css" rel="stylesheet" />
+<script type="text/javascript" src="datatables/1.10.20/datatables.min.js"></script>
+<script type="text/javascript" src="datatables/1.10.20/time-elapsed-dhms.js"></script>
+
+<link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+<script src="bootstrap/js/bootstrap.min.js"></script>
+
+<script type="text/javascript" src="datatables/1.10.20/datatables.bootstrap4.min.js"></script>
+<link type="text/css" href="datatables/1.10.20/datatables.bootstrap4.min.css" rel="stylesheet" />
+
+<script>
+    jQuery.fn.dataTable.ext.type.order['time-elapsed-dhms-pre'] = function(data) {
+
+        var matches = data.match(/^(\d+(?:\.\d+)?)\s*([a-z]+)/i);
+        var multipliers = {
+            ms: 1,
+            s: 1000,
+            m: 60000,
+            h: 3600000,
+            d: 86400000
+        };
+
+        if (matches) {
+            var multiplier = multipliers[matches[2].toLowerCase()];
+            return parseFloat(matches[1]) * multiplier;
+        } else {
+            return -1;
+        };
+    };
+</script>
+
+
+
+
+    <script class="code" type="text/javascript">$(document).ready(function () {
+
+
+        $('.scenario-result-table').DataTable({
+
+            "order": [[0, "asc",], [3, "asc",]],
+            "pageLength": 25,
+            "language": {
+                searchPlaceholder: "Filter",
+                search: ""
+            }
+        });
+
+        // Results table
+        $('#test-results-table').DataTable({
+            "order": [[0, "asc",], [3, "asc",]],
+            "pageLength": 100,
+            "lengthMenu": [[25, 50, 100, 200, -1], [25, 50, 100, 200, "All"]]
+        });
+
+    })
+    ;
+    </script>
+</head>
+
+<body class="results-page">
+<div id="topheader">
+    <div id="topbanner">
+        <div id="logo"><a href="index.html"><img src="images/serenity-logo.png" border="0"/></a></div>
+        <div id="projectname-banner" style="float:right">
+            <span class="projectname">
+                <span class="projecttitle"></span>
+                <span class="projectsubtitle"></span>
+            </span>
+        </div>
+    </div>
+</div>
+
+<div class="middlecontent">
+
+
+    <div id="contenttop">
+        <div class="middlebg">
+        <span class="breadcrumbs"><a href="index.html">Home</a>
+                > <span
+                    class="truncate-60">Passing Tests</span>
+        </span>
+        </div>
+        <div class="rightbg"></div>
+    </div>
+
+    <div class="clr"></div>
+    <!--/* starts second table*/-->
+<div>
+    <ul class="nav nav-tabs" role="tablist">
+        <li class="active">
+            <a href="#"><i class="fa fa-check-square-o"></i> Overall Test Results</a>
+        </li>
+        <li >
+            <a href="capabilities.html"><i class="fa fa-book"></i> Requirements</a>
+        </li>
+        <li >
+            <a href="7ea0a5e2d679b9deeda9910ae4a9bcd3a281e0d908303a9e16e486103e98880c.html"><i class="fa fa-comments-o"></i> Capabilities</a>
+        </li>
+        <li >
+            <a href="576946480b52ad056d6f5bddf874399c83582ecf90963cc074a14c70580e7d9f.html"><i class="fa fa-comments-o"></i> Features</a>
+        </li>
+    </ul>
+    <span class="date-and-time"><a href="build-info.html"><i class="fa fa-info-circle"></i></a> Report generated 23-12-2021 16:44</span>
+    <br style="clear:left"/>
+</div>
+    <div class="clr"></div>
+    <div id="beforetable"></div>
+    <div id="results-dashboard">
+        <div class="middlb">
+            <div class="table">
+
+                <h2>Passing Tests</h2>
+                <table class='overview'>
+                    <tr>
+                        <td width="375px" valign="top">
+                            <div class="test-count-summary">
+                                <div>
+
+                                17 tests
+                                    across 17 scenarios
+
+                                     |
+                                        <a href="01f5288b80adbd3af52a8ed68a4a616d3164f750229f80da1ef344382d948835.csv" title="Download CSV"> <i class="fa fa-download"
+                                                                                        title="Download CSV"></i></a>
+
+                                    <p class="report-info"><i class="fas fa-info-circle"></i> Note that results include
+                                        data-driven scenarios containing tests ,
+                                        which may also contain results other than tests .</p>
+
+
+
+                                </div>
+                            </div>
+
+                            <div>
+                                <ul class="nav nav-tabs">
+                                    <li class="active">
+                                        <a data-toggle="tab" href="#summary"><i class="fas fa-home"></i> Summary</a>
+                                    </li>
+                                    <li>
+                                        <a data-toggle="tab" href="#tests"><i class="fas fa-tachometer-alt"></i> Test
+                                            Results</a>
+                                    </li>
+                                </ul>
+
+
+                                <div class="card border">
+                                    <div class="tab-content" id="pills-tabContent">
+                                        <div id="summary" class="tab-pane fade in active">
+                                            <div class="container-fluid">
+                                                <div class="row">
+                                                    <div class="col-sm-4">
+                                                            <div style="width:300px;"
+                                                                 class="chart-container automated-and-manual-results">
+                                                                <div class="ct-chart ct-square"></div>
+                                                            </div>
+                                                            <script>
+
+                                                                var labels = ['100%', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' '];
+                                                                // Our series array that contains series objects or in this case series data arrays
+
+                                                                var series = [{meta: 'Passing tests (automated)', value: 17}, {meta: 'Passing tests (manual)', value: 0}, {meta: 'Pending tests (automated)', value: 0}, {meta: 'Pending tests (manual)', value: 0}, {meta: 'Ignored tests (automated)', value: 0}, {meta: 'Ignored tests (manual)', value: 0}, {meta: 'Skipped tests (automated)', value: 0}, {meta: 'Skipped tests (manual)', value: 0}, {meta: 'Failing tests (automated)', value: 0}, {meta: 'Failing tests (manual)', value: 0}, {meta: 'Broken tests (automated)', value: 0}, {meta: 'Broken tests (manual)', value: 0}, {meta: 'Compromised tests (automated)', value: 0}, {meta: 'Compromised tests (manual)', value: 0}];
+
+                                                                // As options we currently only set a static size of 300x200 px. We can also omit this and use aspect ratio containers
+                                                                // as you saw in the previous example
+                                                                var options = {
+                                                                    width: 350,
+                                                                    height: 300
+                                                                };
+
+
+                                                                new Chartist.Pie('.ct-chart', {
+                                                                    series: series,
+                                                                    labels: labels
+                                                                }, {
+                                                                    plugins: [Chartist.plugins.tooltip()],
+                                                                    donut: true,
+                                                                    donutWidth: 60,
+                                                                    donutSolid: true,
+                                                                    startAngle: 270,
+                                                                    showLabel: true
+                                                                }, options);
+
+
+                                                                $('a[data-toggle="tab"]').on('shown.bs.tab', function (e) {
+                                                                    new Chartist.Pie('.ct-chart', {
+                                                                        series: series,
+                                                                        labels: labels
+                                                                    }, {
+                                                                        plugins: [Chartist.plugins.tooltip()],
+                                                                        donut: true,
+                                                                        donutWidth: 60,
+                                                                        donutSolid: true,
+                                                                        startAngle: 270,
+                                                                        showLabel: true
+                                                                    }, options);
+                                                                });
+
+
+                                                            </script>
+                                                    </div>
+                                                    <div class="col-sm-8">
+
+                                                        <table class="table">
+                                                            <thead>
+                                                            <tr>
+                                                                <th scope="col">Scenarios</th>
+                                                                <th scope="col" colspan="2" class="automated-stats">
+                                                                    Automated
+                                                                </th>
+                                                            </tr>
+                                                            </thead>
+                                                            <tbody>
+                                                            <tr>
+                                                                    <td class="aggregate-result-count">
+                                                                        <a href="01f5288b80adbd3af52a8ed68a4a616d3164f750229f80da1ef344382d948835.html"><i
+                                                                                class='fa fa-check-circle-o success-icon'></i>&nbsp;Passing</a>
+                                                                    </td>
+                                                                <td class="automated-stats">17</td>
+                                                                <td class="automated-stats">100%</td>
+                                                            </tr>
+                                                            <tr>
+                                                                    <td class="aggregate-result-count"><i
+                                                                            class='fa fa-stop-circle-o pending-icon'></i>&nbsp;Pending
+                                                                    </td>
+                                                                <td class="automated-stats">0</td>
+                                                                <td class="automated-stats"> </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td class="aggregate-result-count"><i
+                                                                        class='fa fa-ban ignored-icon'></i>&nbsp;Ignored
+                                                                </td>
+                                                                <td class="automated-stats">0</td>
+                                                                <td class="automated-stats"> </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td class="aggregate-result-count"><i
+                                                                        class='fa fa-fast-forward skip-icon'></i>&nbsp;Skipped
+                                                                </td>
+                                                                <td class="automated-stats">0</td>
+                                                                <td class="automated-stats"> </td>
+                                                            </tr>
+                                                            <tr>
+                                                                            <td colspan="3"><i
+                                                                                class='fa fa-times failure-icon'></i>&nbsp;<em>Unsuccessful</em></a>
+                                                                            </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td class="aggregate-result-count indented-error-category">
+                                                                    <i
+                                                                            class='fa fa-times-circle failure-icon'></i>&nbsp;Failed
+                                                                </td>
+                                                                <td class="automated-stats">0</td>
+                                                                <td class="automated-stats"> </td>
+                                                            <tr>
+                                                                <td class="aggregate-result-count indented-error-category">
+                                                                    <i
+                                                                            class='fa fa-exclamation-triangle error-icon'></i>&nbsp;Broken
+                                                                </td>
+                                                                <td class="automated-stats">0</td>
+                                                                <td class="automated-stats"> </td>
+                                                            <tr>
+                                                                <td class="aggregate-result-count indented-error-category">
+                                                                    <i
+                                                                            class='fa fa-chain-broken compromised-icon'></i>&nbsp;Compromised
+                                                                </td>
+                                                                <td class="automated-stats">0</td>
+                                                                <td class="automated-stats"> </td>
+                                                            </tr>
+                                                            <tr class="summary-stats">
+                                                                <td class="aggregate-result-count">Total</td>
+                                                                <td class="automated-stats">17</td>
+                                                                <td class="automated-stats"></td>
+                                                            </tr>
+                                                            </tbody>
+                                                        </table>
+                                                    </div>
+                                                </div>
+
+
+                                                <div class="row">
+                                                    <div class="col-sm-12">
+                                                        <h3>Tags</h3>
+
+                                                        <div class="card">
+                                                            <div class="card-body">
+                                                                <div>
+                                                                    <a href="c721517496ffad35fe9a5d73f07a9bd15eb22da3cff8328e1d9f7ec70655c6b0.html">
+                                                                        <span class="badge"
+                                                                              style="background-color:#1D9918; margin:1em;padding:4px;"><i
+                                                                                class="fa fa-tag"></i> Login&nbsp;&nbsp;&nbsp;6</span>
+                                                                    </a>
+                                                                    <a href="ba3d42a914cf53e225392eca2cb6bd3818439028684b4e21bfdc6ac31caaac60.html">
+                                                                        <span class="badge"
+                                                                              style="background-color:#1D9918; margin:1em;padding:4px;"><i
+                                                                                class="fa fa-tag"></i> Sign Up&nbsp;&nbsp;&nbsp;6</span>
+                                                                    </a>
+                                                                    <a href="ff669842465768704085a79a0fc0c520c6f79cd4d84a94c01d5437ce2e4b9528.html">
+                                                                        <span class="badge"
+                                                                              style="background-color:#1D9918; margin:1em;padding:4px;"><i
+                                                                                class="fa fa-tag"></i> Createnewproductapi&nbsp;&nbsp;&nbsp;1</span>
+                                                                    </a>
+                                                                    <a href="f607eb229a478e623e2bb7a81b580328466805f420437527fd59e33c777c7039.html">
+                                                                        <span class="badge"
+                                                                              style="background-color:#1D9918; margin:1em;padding:4px;"><i
+                                                                                class="fa fa-tag"></i> Getallporduct&nbsp;&nbsp;&nbsp;4</span>
+                                                                    </a>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="card">
+                                                            <div class="card-body">
+                                                                <h5 class="card-title">Test Case Key</h5>
+                                                                <div>
+                                                                    <a href="428ac95d48c25a275bc6b0f6992792029d2029509d26dc9cb6a1057102348c0c.html">
+                                                                        <span class="badge"
+                                                                              style="background-color:#1D9918; margin:1em;padding:4px;"><i
+                                                                                class="fa fa-tag"></i> DESKTOP-T1&nbsp;&nbsp;&nbsp;1</span>
+                                                                    </a>
+                                                                    <a href="13506a59d29b2048e55487cb7eebeb87b3e008089da90210a0f8241f33da8bee.html">
+                                                                        <span class="badge"
+                                                                              style="background-color:#1D9918; margin:1em;padding:4px;"><i
+                                                                                class="fa fa-tag"></i> DESKTOP-T2&nbsp;&nbsp;&nbsp;1</span>
+                                                                    </a>
+                                                                    <a href="96bd8a83ea653ab15d7402d0040059db097a5e421e21715039e488b9e77c5c97.html">
+                                                                        <span class="badge"
+                                                                              style="background-color:#1D9918; margin:1em;padding:4px;"><i
+                                                                                class="fa fa-tag"></i> DESKTOP-T3&nbsp;&nbsp;&nbsp;1</span>
+                                                                    </a>
+                                                                    <a href="76f654b5a3470230aeed6a9b1f7682a3d7ce322149b8c936e0625c8b2cf8584b.html">
+                                                                        <span class="badge"
+                                                                              style="background-color:#1D9918; margin:1em;padding:4px;"><i
+                                                                                class="fa fa-tag"></i> DESKTOP-T4&nbsp;&nbsp;&nbsp;1</span>
+                                                                    </a>
+                                                                    <a href="92aa5a03f48b88f3c72e97ad0ed1c7abd6bfd65e0738c19bc6eaf484fa17a89f.html">
+                                                                        <span class="badge"
+                                                                              style="background-color:#1D9918; margin:1em;padding:4px;"><i
+                                                                                class="fa fa-tag"></i> DESKTOP-T5&nbsp;&nbsp;&nbsp;1</span>
+                                                                    </a>
+                                                                    <a href="44e0d7ac673270d3f38c006ac1572ede83c1b6e77dbb7d722eeef84b943a2a54.html">
+                                                                        <span class="badge"
+                                                                              style="background-color:#1D9918; margin:1em;padding:4px;"><i
+                                                                                class="fa fa-tag"></i> DESKTOP-T6&nbsp;&nbsp;&nbsp;1</span>
+                                                                    </a>
+                                                                    <a href="ce1d914e78d36d9959f136f50cd9fb49b290fd20a50ef4657317e261be957ab6.html">
+                                                                        <span class="badge"
+                                                                              style="background-color:#1D9918; margin:1em;padding:4px;"><i
+                                                                                class="fa fa-tag"></i> DESKTOP-T7&nbsp;&nbsp;&nbsp;1</span>
+                                                                    </a>
+                                                                    <a href="414303e20e380321253ad9d5a72f7da8794260c736dc2ae3c85a5765bf7d443c.html">
+                                                                        <span class="badge"
+                                                                              style="background-color:#1D9918; margin:1em;padding:4px;"><i
+                                                                                class="fa fa-tag"></i> DESKTOP-T8&nbsp;&nbsp;&nbsp;1</span>
+                                                                    </a>
+                                                                    <a href="d2ed1d03e9180537b64f9decffca8b72e9cab2b46b9f622f883f77667557f994.html">
+                                                                        <span class="badge"
+                                                                              style="background-color:#1D9918; margin:1em;padding:4px;"><i
+                                                                                class="fa fa-tag"></i> DESKTOP-T9&nbsp;&nbsp;&nbsp;1</span>
+                                                                    </a>
+                                                                    <a href="4a6c80624fd166461ef00d44b38098638992779ad1d27cf3f6a9e9aabfadda41.html">
+                                                                        <span class="badge"
+                                                                              style="background-color:#1D9918; margin:1em;padding:4px;"><i
+                                                                                class="fa fa-tag"></i> DESKTOP-T14&nbsp;&nbsp;&nbsp;1</span>
+                                                                    </a>
+                                                                    <a href="b67cc10fcbcac88aedf422bb7da9eda24b8d3fa64b67ecab081548a756c4766d.html">
+                                                                        <span class="badge"
+                                                                              style="background-color:#1D9918; margin:1em;padding:4px;"><i
+                                                                                class="fa fa-tag"></i> DESKTOP-T15&nbsp;&nbsp;&nbsp;1</span>
+                                                                    </a>
+                                                                    <a href="13b60a7178ac9df1bc2aad39472881bca26d45230771d294b004c2d892fac7fa.html">
+                                                                        <span class="badge"
+                                                                              style="background-color:#1D9918; margin:1em;padding:4px;"><i
+                                                                                class="fa fa-tag"></i> DESKTOP-T16&nbsp;&nbsp;&nbsp;1</span>
+                                                                    </a>
+                                                                    <a href="4385943ce4563999c11d39df16f3c08ea20b34c004500abda623c161de436f9c.html">
+                                                                        <span class="badge"
+                                                                              style="background-color:#1D9918; margin:1em;padding:4px;"><i
+                                                                                class="fa fa-tag"></i> API-06&nbsp;&nbsp;&nbsp;1</span>
+                                                                    </a>
+                                                                    <a href="7eb3419dadd5d01df6d3cd318f42eb377828499e53993c6dee977b457b48f80f.html">
+                                                                        <span class="badge"
+                                                                              style="background-color:#1D9918; margin:1em;padding:4px;"><i
+                                                                                class="fa fa-tag"></i> API-T1&nbsp;&nbsp;&nbsp;1</span>
+                                                                    </a>
+                                                                    <a href="f8e9958c74c48b2cb2b059a65b47bd8fd580915aa923b012aa236f4224c4ee4e.html">
+                                                                        <span class="badge"
+                                                                              style="background-color:#1D9918; margin:1em;padding:4px;"><i
+                                                                                class="fa fa-tag"></i> API-T2&nbsp;&nbsp;&nbsp;1</span>
+                                                                    </a>
+                                                                    <a href="857258845940d10d29d12dabcefc835eda2bc804a7fb52e1635a9a7c5d8981af.html">
+                                                                        <span class="badge"
+                                                                              style="background-color:#1D9918; margin:1em;padding:4px;"><i
+                                                                                class="fa fa-tag"></i> API-T4&nbsp;&nbsp;&nbsp;1</span>
+                                                                    </a>
+                                                                    <a href="e2980044a6dafa7fdbb2accf136fee913b91dac4f00156ae4727895f4b66d296.html">
+                                                                        <span class="badge"
+                                                                              style="background-color:#1D9918; margin:1em;padding:4px;"><i
+                                                                                class="fa fa-tag"></i> API-T5&nbsp;&nbsp;&nbsp;1</span>
+                                                                    </a>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div id="tests" class="tab-pane fade">
+                                            <div class="container-fluid">
+                                                <div class="row">
+                                                    <div class="col-sm-12">
+                                                        <h3><i class="fas fa-cogs"></i> Automated Tests</h3>
+
+                                            <table class="scenario-result-table table" id="scenario-results">
+                                                <thead>
+                                                <tr>
+                                                    <th>feature</th>
+                                                    <th class="test-name-column">Scenario</th>
+                                                    <th>Steps</th>
+                                                    <th>Start Time</th>
+                                                    <th>Duration</th>
+                                                    <th>Result</th>
+                                                </tr>
+                                                </thead>
+                                                <tbody>
+                                                <tr class="scenario-result SUCCESS">
+                                                    <td>
+                                                            <a href="8cc09e4ca44cd5cda2ad79cb05cc7716281f6ce96d4baee1b02888cd8ef1573d.html">Login Amazon</a>
+                                                    </td>
+                                                    <td>
+                                                        <a href="e687a2e8558dc61776d62fee663c2f06dbbc43ced2521cf4e2e79bec2c73b145.html">01 - User can go to login page from clicking account navigation bar</a>
+                                                    </td>
+                                                    <td>3</td>
+                                                    <td>16:38:47</td>
+                                                    <td>20s 034ms</td>
+                                                    <td><a href='##beforetable'><i class='fa fa-check-circle-o success-icon ' title='SUCCESS'></i></a> <span
+                                                            style="display:none">SUCCESS</span></td>
+                                                </tr>
+                                                <tr class="scenario-result SUCCESS">
+                                                    <td>
+                                                            <a href="8cc09e4ca44cd5cda2ad79cb05cc7716281f6ce96d4baee1b02888cd8ef1573d.html">Login Amazon</a>
+                                                    </td>
+                                                    <td>
+                                                        <a href="4f8849f3dc128ed0db33a03eec8ff4e7b45f944fd4ef39a83aca0194cd9f40f5.html">02 - User can go to login page from clicking button sign in from account navigation bar dropdown menu</a>
+                                                    </td>
+                                                    <td>4</td>
+                                                    <td>16:39:09</td>
+                                                    <td>19s 436ms</td>
+                                                    <td><a href='##beforetable'><i class='fa fa-check-circle-o success-icon ' title='SUCCESS'></i></a> <span
+                                                            style="display:none">SUCCESS</span></td>
+                                                </tr>
+                                                <tr class="scenario-result SUCCESS">
+                                                    <td>
+                                                            <a href="8cc09e4ca44cd5cda2ad79cb05cc7716281f6ce96d4baee1b02888cd8ef1573d.html">Login Amazon</a>
+                                                    </td>
+                                                    <td>
+                                                        <a href="9c92cfae8f6e7c01abea65ebdc3be333227415d1335618114cbecb8118e58ae1.html">03 - Success Login Using Correct Email and Password</a>
+                                                    </td>
+                                                    <td>7</td>
+                                                    <td>16:39:29</td>
+                                                    <td>26s 586ms</td>
+                                                    <td><a href='##beforetable'><i class='fa fa-check-circle-o success-icon ' title='SUCCESS'></i></a> <span
+                                                            style="display:none">SUCCESS</span></td>
+                                                </tr>
+                                                <tr class="scenario-result SUCCESS">
+                                                    <td>
+                                                            <a href="8cc09e4ca44cd5cda2ad79cb05cc7716281f6ce96d4baee1b02888cd8ef1573d.html">Login Amazon</a>
+                                                    </td>
+                                                    <td>
+                                                        <a href="4e817c12a8bbbbec84b182cc568201f45774e74039db798ab876bad8fe5f3a10.html">04 - Failed Login Using incorrect Email and Password</a>
+                                                    </td>
+                                                    <td>8</td>
+                                                    <td>16:39:57</td>
+                                                    <td>22s 886ms</td>
+                                                    <td><a href='##beforetable'><i class='fa fa-check-circle-o success-icon ' title='SUCCESS'></i></a> <span
+                                                            style="display:none">SUCCESS</span></td>
+                                                </tr>
+                                                <tr class="scenario-result SUCCESS">
+                                                    <td>
+                                                            <a href="8cc09e4ca44cd5cda2ad79cb05cc7716281f6ce96d4baee1b02888cd8ef1573d.html">Login Amazon</a>
+                                                    </td>
+                                                    <td>
+                                                        <a href="df5a5e5f891186fb8f824c717e0d0cac5b2cf148ccc1e1438c1160ac423cf1be.html">05 - User Cannot Continuing to Login if Email Field Left Empty</a>
+                                                    </td>
+                                                    <td>5</td>
+                                                    <td>16:40:21</td>
+                                                    <td>17s 789ms</td>
+                                                    <td><a href='##beforetable'><i class='fa fa-check-circle-o success-icon ' title='SUCCESS'></i></a> <span
+                                                            style="display:none">SUCCESS</span></td>
+                                                </tr>
+                                                <tr class="scenario-result SUCCESS">
+                                                    <td>
+                                                            <a href="8cc09e4ca44cd5cda2ad79cb05cc7716281f6ce96d4baee1b02888cd8ef1573d.html">Login Amazon</a>
+                                                    </td>
+                                                    <td>
+                                                        <a href="0659521bdc2cce5a18967c26886ad0afbfdd9f39c0b0807db3abef2d2d3573c0.html">06 - User Cannot Continuing to Login if Password Field Left Empty</a>
+                                                    </td>
+                                                    <td>7</td>
+                                                    <td>16:40:40</td>
+                                                    <td>21s 388ms</td>
+                                                    <td><a href='##beforetable'><i class='fa fa-check-circle-o success-icon ' title='SUCCESS'></i></a> <span
+                                                            style="display:none">SUCCESS</span></td>
+                                                </tr>
+                                                <tr class="scenario-result SUCCESS">
+                                                    <td>
+                                                            <a href="1e45f7516e0dbd333b54f1fc12238042e77724bad472a5147523da34d11c06e8.html">Register Amazon New User</a>
+                                                    </td>
+                                                    <td>
+                                                        <a href="eef449809d5996bfb8b5309a3d94c0b6200f2d29f2a7e252b26022792106a593.html">01 - User can go to register page from login page</a>
+                                                    </td>
+                                                    <td>4</td>
+                                                    <td>16:41:27</td>
+                                                    <td>20s 050ms</td>
+                                                    <td><a href='##beforetable'><i class='fa fa-check-circle-o success-icon ' title='SUCCESS'></i></a> <span
+                                                            style="display:none">SUCCESS</span></td>
+                                                </tr>
+                                                <tr class="scenario-result SUCCESS">
+                                                    <td>
+                                                            <a href="1e45f7516e0dbd333b54f1fc12238042e77724bad472a5147523da34d11c06e8.html">Register Amazon New User</a>
+                                                    </td>
+                                                    <td>
+                                                        <a href="7cd7cf9c82d11332f46d6a093bf66bdff40763159d5451932f1cb3fb9fb4075a.html">02 - User can't sign up using existing email on database</a>
+                                                    </td>
+                                                    <td>5</td>
+                                                    <td>16:41:48</td>
+                                                    <td>21s 559ms</td>
+                                                    <td><a href='##beforetable'><i class='fa fa-check-circle-o success-icon ' title='SUCCESS'></i></a> <span
+                                                            style="display:none">SUCCESS</span></td>
+                                                </tr>
+                                                <tr class="scenario-result SUCCESS">
+                                                    <td>
+                                                            <a href="1e45f7516e0dbd333b54f1fc12238042e77724bad472a5147523da34d11c06e8.html">Register Amazon New User</a>
+                                                    </td>
+                                                    <td>
+                                                        <a href="2622eb22860ba6185549d6120ca2c12a70e4dd2a6cbf41f4f80207f1f00a96b3.html">03 - User can't continuing to next step of sign up if all mandatory field left empty</a>
+                                                    </td>
+                                                    <td>6</td>
+                                                    <td>16:42:10</td>
+                                                    <td>21s 965ms</td>
+                                                    <td><a href='##beforetable'><i class='fa fa-check-circle-o success-icon ' title='SUCCESS'></i></a> <span
+                                                            style="display:none">SUCCESS</span></td>
+                                                </tr>
+                                                <tr class="scenario-result SUCCESS">
+                                                    <td>
+                                                            <a href="1e45f7516e0dbd333b54f1fc12238042e77724bad472a5147523da34d11c06e8.html">Register Amazon New User</a>
+                                                    </td>
+                                                    <td>
+                                                        <a href="6f746cc770996c1deb199fcd3a5b6c59578cf039b85123e430f946fb1c6e9730.html">05 - User can't continuing to next step of sign up if password and re-enter password doesnt match</a>
+                                                    </td>
+                                                    <td>6</td>
+                                                    <td>16:43:33</td>
+                                                    <td>23s 246ms</td>
+                                                    <td><a href='##beforetable'><i class='fa fa-check-circle-o success-icon ' title='SUCCESS'></i></a> <span
+                                                            style="display:none">SUCCESS</span></td>
+                                                </tr>
+                                                <tr class="scenario-result SUCCESS">
+                                                    <td>
+                                                            <a href="1e45f7516e0dbd333b54f1fc12238042e77724bad472a5147523da34d11c06e8.html">Register Amazon New User</a>
+                                                    </td>
+                                                    <td>
+                                                        <a href="08228a8f9e70f45aa9ff14951ee1066bf101c561773fff6294c6bdcaa7bcd27a.html">06 - User input wrong email format</a>
+                                                    </td>
+                                                    <td>6</td>
+                                                    <td>16:43:58</td>
+                                                    <td>23s 639ms</td>
+                                                    <td><a href='##beforetable'><i class='fa fa-check-circle-o success-icon ' title='SUCCESS'></i></a> <span
+                                                            style="display:none">SUCCESS</span></td>
+                                                </tr>
+                                                <tr class="scenario-result SUCCESS">
+                                                    <td>
+                                                            <a href="1e45f7516e0dbd333b54f1fc12238042e77724bad472a5147523da34d11c06e8.html">Register Amazon New User</a>
+                                                    </td>
+                                                    <td>
+                                                        <a href="29006eba326a3310d3c1d1fa1eb0319093aa11dbe2525cb48b25b86bb95a920b.html">07 - User success create new account from sign up page</a>
+                                                    </td>
+                                                    <td>5</td>
+                                                    <td>16:44:22</td>
+                                                    <td>24s 057ms</td>
+                                                    <td><a href='##beforetable'><i class='fa fa-check-circle-o success-icon ' title='SUCCESS'></i></a> <span
+                                                            style="display:none">SUCCESS</span></td>
+                                                </tr>
+                                                <tr class="scenario-result SUCCESS">
+                                                    <td>
+                                                            <a href="8c37ce3235cb69670084abd911cea70dd7a6c49b939f84679cac4f0c14dc201c.html">Create New Product API</a>
+                                                    </td>
+                                                    <td>
+                                                        <a href="d04e47dd2d0b834cd031a714156417f9fa62c23f95f6b2b5130569134c67fdf2.html">01 - User success add new product with valid Json data</a>
+                                                                   (1 example)
+                                                    </td>
+                                                    <td>9</td>
+                                                    <td>16:41:04</td>
+                                                    <td>1s 324ms</td>
+                                                    <td><a href='##beforetable'><i class='fa fa-check-circle-o success-icon ' title='SUCCESS'></i></a> <span
+                                                            style="display:none">SUCCESS</span></td>
+                                                </tr>
+                                                <tr class="scenario-result SUCCESS">
+                                                    <td>
+                                                            <a href="4b73be50820981527e7a57a0552192a56dd5efe41e09d4b835425f7265e9d0e9.html">Get Product API</a>
+                                                    </td>
+                                                    <td>
+                                                        <a href="a691bd68bda72327a1d3bd7ac7ce0770fefaec4651081b1c84def69d4506edc2.html">01 - User can get all products list</a>
+                                                    </td>
+                                                    <td>4</td>
+                                                    <td>16:36:42</td>
+                                                    <td>23s 847ms</td>
+                                                    <td><a href='##beforetable'><i class='fa fa-check-circle-o success-icon ' title='SUCCESS'></i></a> <span
+                                                            style="display:none">SUCCESS</span></td>
+                                                </tr>
+                                                <tr class="scenario-result SUCCESS">
+                                                    <td>
+                                                            <a href="4b73be50820981527e7a57a0552192a56dd5efe41e09d4b835425f7265e9d0e9.html">Get Product API</a>
+                                                    </td>
+                                                    <td>
+                                                        <a href="ff95ab9bd7007292d967717ac74ce221b10a20fd2d89020d0efda31ae4b3d2d8.html">02 - User can get all products list with limit param</a>
+                                                    </td>
+                                                    <td>5</td>
+                                                    <td>16:37:06</td>
+                                                    <td>31s 129ms</td>
+                                                    <td><a href='##beforetable'><i class='fa fa-check-circle-o success-icon ' title='SUCCESS'></i></a> <span
+                                                            style="display:none">SUCCESS</span></td>
+                                                </tr>
+                                                <tr class="scenario-result SUCCESS">
+                                                    <td>
+                                                            <a href="4b73be50820981527e7a57a0552192a56dd5efe41e09d4b835425f7265e9d0e9.html">Get Product API</a>
+                                                    </td>
+                                                    <td>
+                                                        <a href="a61248897b75bc42fb731eaf1639aa6e6348bb28ca9c87fc85376ee21f9419bb.html">04 - User will get null response if set ID in negative value</a>
+                                                    </td>
+                                                    <td>4</td>
+                                                    <td>16:37:58</td>
+                                                    <td>16s 417ms</td>
+                                                    <td><a href='##beforetable'><i class='fa fa-check-circle-o success-icon ' title='SUCCESS'></i></a> <span
+                                                            style="display:none">SUCCESS</span></td>
+                                                </tr>
+                                                <tr class="scenario-result SUCCESS">
+                                                    <td>
+                                                            <a href="4b73be50820981527e7a57a0552192a56dd5efe41e09d4b835425f7265e9d0e9.html">Get Product API</a>
+                                                    </td>
+                                                    <td>
+                                                        <a href="c855dfc159d1fb2291b2f21578163cbb583802a5947eeef8f5de787d90f97f04.html">05 - User will get null response if set ID in very big number (product id not exist)</a>
+                                                    </td>
+                                                    <td>4</td>
+                                                    <td>16:38:14</td>
+                                                    <td>30s 634ms</td>
+                                                    <td><a href='##beforetable'><i class='fa fa-check-circle-o success-icon ' title='SUCCESS'></i></a> <span
+                                                            style="display:none">SUCCESS</span></td>
+                                                </tr>
+                                                </tbody>
+                                            </table>
+
+                                                    </div>
+                                                </div>
+
+                                                <div class="row">
+                                                    <div class="col-sm-12">
+                                                        <h3><i class="fas fa-edit"></i> Manual Tests</h3>
+
+                                                No manual tests were recorded
+
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                        </td>
+
+                    </tr>
+                </table>
+
+            </div>
+        </div>
+    </div>
+</div>
+<div id="beforefooter"></div>
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-sm-12">
+            <span class="version">Serenity BDD version 2.3.8</span>
+        </div>
+    </div>
+</div>
+
+
+</body>
+</html>

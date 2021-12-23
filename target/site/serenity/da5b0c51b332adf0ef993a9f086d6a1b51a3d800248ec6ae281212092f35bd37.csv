@@ -1,0 +1,7 @@
+"Story","Title","Result","Date","Stability","Duration (s)"
+"Register Amazon New User","04 - User can't continuing to next step of sign up if only one of mandatory field left empty","FAILURE","2021-12-23T16:42:34.018+07:00[Asia/Jakarta]","0.0","58.57"
+"Create New Product API","02 - User will get error response if title value set as integer","FAILURE","2021-12-23T16:41:05.597+07:00[Asia/Jakarta]","0.0","0.86"
+"Create New Product API","03 - User will get error response if request body is empty json","FAILURE","2021-12-23T16:41:06.463+07:00[Asia/Jakarta]","0.0","0.88"
+"Create New Product API","04 - User will get error response if request body is empty object","FAILURE","2021-12-23T16:41:07.351+07:00[Asia/Jakarta]","0.0","0.99"
+"Create New Product API","06 - User will get error response if price field set as String value","FAILURE","2021-12-23T16:41:09.491+07:00[Asia/Jakarta]","0.0","0.79"
+"Get Product API","03 - User can get product detail by ID","FAILURE","2021-12-23T16:37:37.575+07:00[Asia/Jakarta]","0.0","20.5"

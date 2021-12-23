@@ -1,0 +1,599 @@
+{
+  "report": {
+    "title": "Serenity Summary Report",
+    "tagCategoryTitle": "Category",
+    "version": "",
+    "date": "2021-12-23T16:36:42.525"
+  },
+  "results": {
+    "counts": {
+      "total": 28,
+      "success": 20,
+      "pending": 0,
+      "ignored": 0,
+      "skipped": 0,
+      "failure": 6,
+      "error": 2,
+      "compromised": 0
+    },
+    "percentages": {
+      "success": 71,
+      "pending": 0,
+      "ignored": 0,
+      "skipped": 0,
+      "failure": 21,
+      "error": 7,
+      "compromised": 0
+    },
+    "totalTestDuration": 465807,
+    "totalClockDuration": 460427,
+    "minTestDuration": 789,
+    "maxTestDuration": 31129,
+    "averageTestDuration": 18632
+  },
+  "resultsByFeature": [
+    {
+      "featureName": "Create New Product API",
+      "scenarios": [
+        {
+          "title": "01 - User success add new product with valid Json data",
+          "result": "success",
+          "outcomes": []
+        },
+        {
+          "title": "02 - User will get error response if title value set as integer",
+          "result": "failure",
+          "outcomes": [
+            {
+              "result": "failure",
+              "description": "",
+              "errorMessage": "Assertion error: 1 expectation failed.Expected status code <400> but was <200>."
+            }
+          ]
+        },
+        {
+          "title": "03 - User will get error response if request body is empty json",
+          "result": "failure",
+          "outcomes": [
+            {
+              "result": "failure",
+              "description": "",
+              "errorMessage": "Assertion error: 1 expectation failed.Expected status code <400> but was <200>."
+            }
+          ]
+        },
+        {
+          "title": "04 - User will get error response if request body is empty object",
+          "result": "failure",
+          "outcomes": [
+            {
+              "result": "failure",
+              "description": "",
+              "errorMessage": "Assertion error: 1 expectation failed.Expected status code <400> but was <200>."
+            }
+          ]
+        },
+        {
+          "title": "05 - User will get error response if request body is null",
+          "result": "error",
+          "outcomes": [
+            {
+              "result": "error",
+              "description": "",
+              "errorMessage": "Class cast exception: io.restassured.path.xml.XmlPath cannot be cast to java.lang.String"
+            }
+          ]
+        },
+        {
+          "title": "06 - User will get error response if price field set as String value",
+          "result": "failure",
+          "outcomes": [
+            {
+              "result": "failure",
+              "description": "",
+              "errorMessage": "Assertion error: 1 expectation failed.Expected status code <400> but was <200>."
+            }
+          ]
+        },
+        {
+          "title": "07 - Creating new product will be recorded in DB and can be access using get product method",
+          "result": "error",
+          "outcomes": [
+            {
+              "result": "error",
+              "description": "Example: {title=test product, price=13.5, desc=lorem ipsum sedolor, img=https://i.pravatar.cc, cat=electronic}",
+              "errorMessage": "Json exception: A JSON payload should start with an openning curly brace '{' or an openning square bracket '['."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "featureName": "Get Product API",
+      "scenarios": [
+        {
+          "title": "01 - User can get all products list",
+          "result": "success",
+          "outcomes": [
+            {
+              "result": "success",
+              "description": "",
+              "errorMessage": ""
+            }
+          ]
+        },
+        {
+          "title": "02 - User can get all products list with limit param",
+          "result": "success",
+          "outcomes": [
+            {
+              "result": "success",
+              "description": "",
+              "errorMessage": ""
+            }
+          ]
+        },
+        {
+          "title": "03 - User can get product detail by ID",
+          "result": "failure",
+          "outcomes": [
+            {
+              "result": "failure",
+              "description": "",
+              "errorMessage": "Assertion error"
+            }
+          ]
+        },
+        {
+          "title": "04 - User will get null response if set ID in negative value",
+          "result": "success",
+          "outcomes": [
+            {
+              "result": "success",
+              "description": "",
+              "errorMessage": ""
+            }
+          ]
+        },
+        {
+          "title": "05 - User will get null response if set ID in very big number (product id not exist)",
+          "result": "success",
+          "outcomes": [
+            {
+              "result": "success",
+              "description": "",
+              "errorMessage": ""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "featureName": "Login Amazon",
+      "scenarios": [
+        {
+          "title": "01 - User can go to login page from clicking account navigation bar",
+          "result": "success",
+          "outcomes": [
+            {
+              "result": "success",
+              "description": "",
+              "errorMessage": ""
+            }
+          ]
+        },
+        {
+          "title": "02 - User can go to login page from clicking button sign in from account navigation bar dropdown menu",
+          "result": "success",
+          "outcomes": [
+            {
+              "result": "success",
+              "description": "",
+              "errorMessage": ""
+            }
+          ]
+        },
+        {
+          "title": "03 - Success Login Using Correct Email and Password",
+          "result": "success",
+          "outcomes": [
+            {
+              "result": "success",
+              "description": "",
+              "errorMessage": ""
+            }
+          ]
+        },
+        {
+          "title": "04 - Failed Login Using incorrect Email and Password",
+          "result": "success",
+          "outcomes": [
+            {
+              "result": "success",
+              "description": "",
+              "errorMessage": ""
+            }
+          ]
+        },
+        {
+          "title": "05 - User Cannot Continuing to Login if Email Field Left Empty",
+          "result": "success",
+          "outcomes": [
+            {
+              "result": "success",
+              "description": "",
+              "errorMessage": ""
+            }
+          ]
+        },
+        {
+          "title": "06 - User Cannot Continuing to Login if Password Field Left Empty",
+          "result": "success",
+          "outcomes": [
+            {
+              "result": "success",
+              "description": "",
+              "errorMessage": ""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "featureName": "Register Amazon New User",
+      "scenarios": [
+        {
+          "title": "01 - User can go to register page from login page",
+          "result": "success",
+          "outcomes": [
+            {
+              "result": "success",
+              "description": "",
+              "errorMessage": ""
+            }
+          ]
+        },
+        {
+          "title": "02 - User can't sign up using existing email on database",
+          "result": "success",
+          "outcomes": [
+            {
+              "result": "success",
+              "description": "",
+              "errorMessage": ""
+            }
+          ]
+        },
+        {
+          "title": "03 - User can't continuing to next step of sign up if all mandatory field left empty",
+          "result": "success",
+          "outcomes": [
+            {
+              "result": "success",
+              "description": "",
+              "errorMessage": ""
+            }
+          ]
+        },
+        {
+          "title": "04 - User can't continuing to next step of sign up if only one of mandatory field left empty",
+          "result": "failure",
+          "outcomes": [
+            {
+              "result": "failure",
+              "description": "Example: {the_only_one_empty_field=email}",
+              "errorMessage": "Assertion error"
+            }
+          ]
+        },
+        {
+          "title": "05 - User can't continuing to next step of sign up if password and re-enter password doesnt match",
+          "result": "success",
+          "outcomes": [
+            {
+              "result": "success",
+              "description": "",
+              "errorMessage": ""
+            }
+          ]
+        },
+        {
+          "title": "06 - User input wrong email format",
+          "result": "success",
+          "outcomes": [
+            {
+              "result": "success",
+              "description": "",
+              "errorMessage": ""
+            }
+          ]
+        },
+        {
+          "title": "07 - User success create new account from sign up page",
+          "result": "success",
+          "outcomes": [
+            {
+              "result": "success",
+              "description": "",
+              "errorMessage": ""
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "frequentFailures": [
+    {
+      "name": "Assertion error",
+      "count": 6
+    },
+    {
+      "name": "Class cast exception",
+      "count": 1
+    },
+    {
+      "name": "Json exception",
+      "count": 1
+    }
+  ],
+  "unstableFeatures": [
+    {
+      "name": "Create New Product API",
+      "failurePercentage": 85
+    },
+    {
+      "name": "Get Product API",
+      "failurePercentage": 20
+    },
+    {
+      "name": "Register Amazon New User",
+      "failurePercentage": 10
+    }
+  ],
+  "coverage": [
+    {
+      "tagTitle": "Feature",
+      "tagCoverages": [
+        {
+          "tagName": "Login Amazon",
+          "testCount": 6,
+          "successRate": "100%",
+          "counts": {
+            "total": 28,
+            "success": 6,
+            "pending": 0,
+            "ignored": 0,
+            "skipped": 0,
+            "failure": 0,
+            "error": 0,
+            "compromised": 0
+          },
+          "percentages": {
+            "success": 100,
+            "pending": 0,
+            "ignored": 0,
+            "skipped": 0,
+            "failure": 0,
+            "error": 0,
+            "compromised": 0
+          }
+        },
+        {
+          "tagName": "Register Amazon New User",
+          "testCount": 10,
+          "successRate": "90%",
+          "counts": {
+            "total": 28,
+            "success": 9,
+            "pending": 0,
+            "ignored": 0,
+            "skipped": 0,
+            "failure": 1,
+            "error": 0,
+            "compromised": 0
+          },
+          "percentages": {
+            "success": 90,
+            "pending": 0,
+            "ignored": 0,
+            "skipped": 0,
+            "failure": 10,
+            "error": 0,
+            "compromised": 0
+          }
+        },
+        {
+          "tagName": "Create New Product API",
+          "testCount": 7,
+          "successRate": "14%",
+          "counts": {
+            "total": 28,
+            "success": 1,
+            "pending": 0,
+            "ignored": 0,
+            "skipped": 0,
+            "failure": 4,
+            "error": 2,
+            "compromised": 0
+          },
+          "percentages": {
+            "success": 14.285714,
+            "pending": 0,
+            "ignored": 0,
+            "skipped": 0,
+            "failure": 57.142857,
+            "error": 28.571429,
+            "compromised": 0
+          }
+        },
+        {
+          "tagName": "Get Product API",
+          "testCount": 5,
+          "successRate": "80%",
+          "counts": {
+            "total": 28,
+            "success": 4,
+            "pending": 0,
+            "ignored": 0,
+            "skipped": 0,
+            "failure": 1,
+            "error": 0,
+            "compromised": 0
+          },
+          "percentages": {
+            "success": 80,
+            "pending": 0,
+            "ignored": 0,
+            "skipped": 0,
+            "failure": 20,
+            "error": 0,
+            "compromised": 0
+          }
+        }
+      ]
+    }
+  ],
+  "tags": [
+    {
+      "tagType": "",
+      "tagResults": [
+        {
+          "tagName": "Login",
+          "count": 6
+        },
+        {
+          "tagName": "SignUp",
+          "count": 10
+        },
+        {
+          "tagName": "createNewProductAPI",
+          "count": 7
+        },
+        {
+          "tagName": "getALLPorduct",
+          "count": 5
+        }
+      ]
+    },
+    {
+      "tagType": "TestCaseKey",
+      "tagResults": [
+        {
+          "tagName": "DESKTOP-T1",
+          "count": 1
+        },
+        {
+          "tagName": "DESKTOP-T2",
+          "count": 1
+        },
+        {
+          "tagName": "DESKTOP-T3",
+          "count": 1
+        },
+        {
+          "tagName": "DESKTOP-T4",
+          "count": 1
+        },
+        {
+          "tagName": "DESKTOP-T5",
+          "count": 1
+        },
+        {
+          "tagName": "DESKTOP-T6",
+          "count": 1
+        },
+        {
+          "tagName": "DESKTOP-T7",
+          "count": 1
+        },
+        {
+          "tagName": "DESKTOP-T8",
+          "count": 1
+        },
+        {
+          "tagName": "DESKTOP-T9",
+          "count": 1
+        },
+        {
+          "tagName": "DESKTOP-T10",
+          "count": 4
+        },
+        {
+          "tagName": "DESKTOP-T12",
+          "count": 4
+        },
+        {
+          "tagName": "DESKTOP-T11",
+          "count": 4
+        },
+        {
+          "tagName": "DESKTOP-T13",
+          "count": 4
+        },
+        {
+          "tagName": "DESKTOP-T14",
+          "count": 1
+        },
+        {
+          "tagName": "DESKTOP-T15",
+          "count": 1
+        },
+        {
+          "tagName": "DESKTOP-T16",
+          "count": 1
+        },
+        {
+          "tagName": "API-06",
+          "count": 1
+        },
+        {
+          "tagName": "API-07",
+          "count": 1
+        },
+        {
+          "tagName": "API-08",
+          "count": 1
+        },
+        {
+          "tagName": "API-09",
+          "count": 1
+        },
+        {
+          "tagName": "API-11",
+          "count": 1
+        },
+        {
+          "tagName": "API-12",
+          "count": 1
+        },
+        {
+          "tagName": "API-13",
+          "count": 1
+        },
+        {
+          "tagName": "API-T1",
+          "count": 1
+        },
+        {
+          "tagName": "API-T2",
+          "count": 1
+        },
+        {
+          "tagName": "API-T3",
+          "count": 1
+        },
+        {
+          "tagName": "API-T4",
+          "count": 1
+        },
+        {
+          "tagName": "API-T5",
+          "count": 1
+        }
+      ]
+    }
+  ]
+}
+
+
+

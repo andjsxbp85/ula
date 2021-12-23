@@ -1,0 +1,2 @@
+"Story","Title","Result","Date","Stability","Duration (s)"
+"Create New Product API","06 - User will get error response if price field set as String value","FAILURE","2021-12-23T16:41:09.491+07:00[Asia/Jakarta]","0.0","0.79"

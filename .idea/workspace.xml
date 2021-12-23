@@ -5,11 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a0fb5d1c-4453-4858-ba32-12809689d144" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/serenity.properties" beforeDir="false" afterPath="$PROJECT_DIR$/serenity.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/resources/features/fakestore/Add New Product.feature" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/features/fakestore/Add New Product.feature" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/resources/features/fakestore/Get Product.feature" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/features/fakestore/Get Product.feature" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -117,7 +115,7 @@
       <workItem from="1640161616508" duration="107000" />
       <workItem from="1640161743306" duration="3878000" />
       <workItem from="1640167556381" duration="1478000" />
-      <workItem from="1640169054048" duration="58480000" />
+      <workItem from="1640169054048" duration="59221000" />
     </task>
     <servers />
   </component>

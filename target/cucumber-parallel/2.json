@@ -1,0 +1,687 @@
+[
+  {
+    "line": 2,
+    "elements": [
+      {
+        "start_timestamp": "2021-12-23T09:36:42.515Z",
+        "before": [
+          {
+            "result": {
+              "duration": 86000000,
+              "status": "passed"
+            },
+            "match": {
+              "location": "AndroidDriverAppium.AppiumConfig.initConfig(io.cucumber.java.Scenario)"
+            }
+          }
+        ],
+        "line": 8,
+        "name": "01 - User can get all products list",
+        "description": "",
+        "id": "get-product-api;01---user-can-get-all-products-list",
+        "after": [
+          {
+            "result": {
+              "duration": 4000000,
+              "status": "passed"
+            },
+            "match": {
+              "location": "AndroidDriverAppium.AppiumConfig.closeApps(io.cucumber.java.Scenario)"
+            }
+          }
+        ],
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 268000000,
+              "status": "passed"
+            },
+            "line": 9,
+            "name": "user prepare data for hitting get all products endpoint \u0027\u0027",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\u0027\u0027",
+                  "offset": 56
+                }
+              ],
+              "location": "Tests.GetPorducts.user_prepare_data_for_hitting_get_all_products_endpoint(java.lang.String)"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 22689000000,
+              "status": "passed"
+            },
+            "line": 10,
+            "name": "user hit endpoint get all products with request data that has been prepared before",
+            "match": {
+              "location": "Tests.GetPorducts.user_hit_endpoint_get_all_products_with_request_data_that_has_been_prepared_before()"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 34000000,
+              "status": "passed"
+            },
+            "line": 11,
+            "name": "didapatkan http response code Get Product 200",
+            "match": {
+              "arguments": [
+                {
+                  "val": "200",
+                  "offset": 42
+                }
+              ],
+              "location": "Tests.GetPorducts.didapatkan_http_response_code_get_product(java.lang.Integer)"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 494000000,
+              "status": "passed"
+            },
+            "line": 12,
+            "name": "didapatkan json schema Get Product sesuai dengan file GetProduct/successGetAllProduct.json",
+            "match": {
+              "arguments": [
+                {
+                  "val": "GetProduct/successGetAllProduct.json",
+                  "offset": 54
+                }
+              ],
+              "location": "Tests.GetPorducts.didapatkan_json_schema_get_all_product_sesuai_dengan_file_success_get_all_proudct_json(java.lang.String)"
+            },
+            "keyword": "And "
+          }
+        ],
+        "tags": [
+          {
+            "name": "@getALLPorduct"
+          },
+          {
+            "name": "@TestCaseKey\u003dAPI-T1"
+          }
+        ]
+      },
+      {
+        "start_timestamp": "2021-12-23T09:37:06.418Z",
+        "before": [
+          {
+            "result": {
+              "duration": 4000000,
+              "status": "passed"
+            },
+            "match": {
+              "location": "AndroidDriverAppium.AppiumConfig.initConfig(io.cucumber.java.Scenario)"
+            }
+          }
+        ],
+        "line": 15,
+        "name": "02 - User can get all products list with limit param",
+        "description": "",
+        "id": "get-product-api;02---user-can-get-all-products-list-with-limit-param",
+        "after": [
+          {
+            "result": {
+              "status": "passed"
+            },
+            "match": {
+              "location": "AndroidDriverAppium.AppiumConfig.closeApps(io.cucumber.java.Scenario)"
+            }
+          }
+        ],
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 8000000,
+              "status": "passed"
+            },
+            "line": 16,
+            "name": "user prepare data for hitting get all products endpoint \u0027limit\u003d5\u0027",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\u0027limit\u003d5\u0027",
+                  "offset": 56
+                }
+              ],
+              "location": "Tests.GetPorducts.user_prepare_data_for_hitting_get_all_products_endpoint(java.lang.String)"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 30776000000,
+              "status": "passed"
+            },
+            "line": 17,
+            "name": "user hit endpoint get all products with request data that has been prepared before",
+            "match": {
+              "location": "Tests.GetPorducts.user_hit_endpoint_get_all_products_with_request_data_that_has_been_prepared_before()"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 6000000,
+              "status": "passed"
+            },
+            "line": 18,
+            "name": "didapatkan http response code Get Product 200",
+            "match": {
+              "arguments": [
+                {
+                  "val": "200",
+                  "offset": 42
+                }
+              ],
+              "location": "Tests.GetPorducts.didapatkan_http_response_code_get_product(java.lang.Integer)"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 243000000,
+              "status": "passed"
+            },
+            "line": 19,
+            "name": "jumlah list product yang didapatkan sesuai dengan limit\u003d5",
+            "match": {
+              "arguments": [
+                {
+                  "val": "5",
+                  "offset": 56
+                }
+              ],
+              "location": "Tests.GetPorducts.jumlah_list_product_yang_didapatkan_sesuai_dengan_limit(int)"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 60000000,
+              "status": "passed"
+            },
+            "line": 20,
+            "name": "didapatkan json schema Get Product sesuai dengan file GetProduct/successGetAllProduct.json",
+            "match": {
+              "arguments": [
+                {
+                  "val": "GetProduct/successGetAllProduct.json",
+                  "offset": 54
+                }
+              ],
+              "location": "Tests.GetPorducts.didapatkan_json_schema_get_all_product_sesuai_dengan_file_success_get_all_proudct_json(java.lang.String)"
+            },
+            "keyword": "And "
+          }
+        ],
+        "tags": [
+          {
+            "name": "@getALLPorduct"
+          },
+          {
+            "name": "@TestCaseKey\u003dAPI-T2"
+          }
+        ]
+      },
+      {
+        "start_timestamp": "2021-12-23T09:37:37.573Z",
+        "before": [
+          {
+            "result": {
+              "duration": 4000000,
+              "status": "passed"
+            },
+            "match": {
+              "location": "AndroidDriverAppium.AppiumConfig.initConfig(io.cucumber.java.Scenario)"
+            }
+          }
+        ],
+        "line": 23,
+        "name": "03 - User can get product detail by ID",
+        "description": "",
+        "id": "get-product-api;03---user-can-get-product-detail-by-id",
+        "after": [
+          {
+            "result": {
+              "duration": 1000000,
+              "status": "passed"
+            },
+            "match": {
+              "location": "AndroidDriverAppium.AppiumConfig.closeApps(io.cucumber.java.Scenario)"
+            }
+          }
+        ],
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 5000000,
+              "status": "passed"
+            },
+            "line": 24,
+            "name": "user prepare data for hitting get product endpoint by ID 1",
+            "match": {
+              "arguments": [
+                {
+                  "val": "1",
+                  "offset": 57
+                }
+              ],
+              "location": "Tests.GetPorducts.user_prepare_data_for_hitting_get_product_endpoint_by_id(java.lang.String)"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 19782000000,
+              "status": "passed"
+            },
+            "line": 25,
+            "name": "user hit endpoint get product by ID tersebut",
+            "match": {
+              "location": "Tests.GetPorducts.user_hit_endpoint_get_product_by_id()"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 5000000,
+              "status": "passed"
+            },
+            "line": 26,
+            "name": "didapatkan http response code Get Product 200",
+            "match": {
+              "arguments": [
+                {
+                  "val": "200",
+                  "offset": 42
+                }
+              ],
+              "location": "Tests.GetPorducts.didapatkan_http_response_code_get_product(java.lang.Integer)"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "error_message": "net.serenitybdd.core.exceptions.SerenityManagedException\n\tat org.junit.Assert.fail(Assert.java:87)\n\tat org.junit.Assert.assertTrue(Assert.java:42)\n\tat org.junit.Assert.assertTrue(Assert.java:53)\n\tat Steps.GetProductsStep.didapatkan_nama_barang_dari_get_product_adalah(GetProductsStep.java:27)\n\tat Steps.GetProductsStep$ByteBuddy$dtzZYejO.didapatkan_nama_barang_dari_get_product_adalah$accessor$9IJr3VfC(Unknown Source)\n\tat sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)\n\tat sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)\n\tat sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)\n\tat java.lang.reflect.Method.invoke(Method.java:498)\n\tat net.thucydides.core.steps.BaseMethodRunner.invokeMethod(BaseMethodRunner.java:18)\n\tat net.thucydides.core.steps.NormalMethodRunner.invokeMethodAndNotifyFailures(NormalMethodRunner.java:18)\n\tat net.thucydides.core.steps.StepInterceptor.runNormalMethod(StepInterceptor.java:398)\n\tat net.thucydides.core.steps.StepInterceptor.testStepResult(StepInterceptor.java:183)\n\tat net.thucydides.core.steps.StepInterceptor.intercept(StepInterceptor.java:76)\n\tat net.thucydides.core.steps.ProxyConfiguration$InterceptorDispatcher.intercept(ProxyConfiguration.java:51)\n\tat Steps.GetProductsStep$ByteBuddy$dtzZYejO.didapatkan_nama_barang_dari_get_product_adalah(Unknown Source)\n\tat Tests.GetPorducts.didapatkan_nama_barang_dari_get_product_adalah(GetPorducts.java:47)\n\tat ✽.didapatkan nama barang dari get product adalah \"Fjallraven - Foldsack No. 1 Backpack, Fits 15 Laptops\"(file:///Users/anjas.muhammad/Desktop/ULA_Automation_Anjas/ula/src/test/resources/features/fakestore/Get%20Product.feature:27)\n",
+              "duration": 639000000,
+              "status": "failed"
+            },
+            "line": 27,
+            "name": "didapatkan nama barang dari get product adalah \"Fjallraven - Foldsack No. 1 Backpack, Fits 15 Laptops\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"Fjallraven - Foldsack No. 1 Backpack, Fits 15 Laptops\"",
+                  "offset": 47
+                }
+              ],
+              "location": "Tests.GetPorducts.didapatkan_nama_barang_dari_get_product_adalah(java.lang.String)"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 5000000,
+              "status": "skipped"
+            },
+            "line": 28,
+            "name": "harga barang dari get product adalah 109.95",
+            "match": {
+              "arguments": [
+                {
+                  "val": "109.95",
+                  "offset": 37
+                }
+              ],
+              "location": "Tests.GetPorducts.harga_barang_dari_get_product_adalah(java.lang.Double)"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 1000000,
+              "status": "skipped"
+            },
+            "line": 29,
+            "name": "deskripsi product dari get product adalah \"Your perfect pack for everyday use and walks in the forest. Stash your laptop (up to 15 inches) in the padded sleeve, your everyday\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"Your perfect pack for everyday use and walks in the forest. Stash your laptop (up to 15 inches) in the padded sleeve, your everyday\"",
+                  "offset": 42
+                }
+              ],
+              "location": "Tests.GetPorducts.deskripsi_product_dari_get_product_adalah(java.lang.String)"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 1000000,
+              "status": "skipped"
+            },
+            "line": 30,
+            "name": "kategori product dari get product adalah \"men\u0027s clothing\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"men\u0027s clothing\"",
+                  "offset": 41
+                }
+              ],
+              "location": "Tests.GetPorducts.kategori_product_dari_get_product_adalah(java.lang.String)"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 1000000,
+              "status": "skipped"
+            },
+            "line": 31,
+            "name": "alamat gambar product dari get product adalah \"https://fakestoreapi.com/img/81fPKd-2AYL._AC_SL1500_.jpg\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"https://fakestoreapi.com/img/81fPKd-2AYL._AC_SL1500_.jpg\"",
+                  "offset": 46
+                }
+              ],
+              "location": "Tests.GetPorducts.alamat_gambar_product_dari_get_product_adalah(java.lang.String)"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 1000000,
+              "status": "skipped"
+            },
+            "line": 32,
+            "name": "product dari get product tersebut memiliki rating 3.9",
+            "match": {
+              "arguments": [
+                {
+                  "val": "3.9",
+                  "offset": 50
+                }
+              ],
+              "location": "Tests.GetPorducts.product_dari_get_product_tersebut_memiliki_rating(java.lang.Double)"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 1000000,
+              "status": "skipped"
+            },
+            "line": 33,
+            "name": "jumlah product yang tersedia dari get product adalah 120 buah",
+            "match": {
+              "arguments": [
+                {
+                  "val": "120",
+                  "offset": 53
+                }
+              ],
+              "location": "Tests.GetPorducts.jumlah_product_yang_tersedia_dari_get_product_adalah_buah(java.lang.Integer)"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 1000000,
+              "status": "skipped"
+            },
+            "line": 34,
+            "name": "didapatkan json schema Get Product sesuai dengan file GetProduct/successGetProductByID.json",
+            "match": {
+              "arguments": [
+                {
+                  "val": "GetProduct/successGetProductByID.json",
+                  "offset": 54
+                }
+              ],
+              "location": "Tests.GetPorducts.didapatkan_json_schema_get_all_product_sesuai_dengan_file_success_get_all_proudct_json(java.lang.String)"
+            },
+            "keyword": "And "
+          }
+        ],
+        "tags": [
+          {
+            "name": "@getALLPorduct"
+          },
+          {
+            "name": "@TestCaseKey\u003dAPI-T3"
+          }
+        ]
+      },
+      {
+        "start_timestamp": "2021-12-23T09:37:58.181Z",
+        "before": [
+          {
+            "result": {
+              "duration": 2000000,
+              "status": "passed"
+            },
+            "match": {
+              "location": "AndroidDriverAppium.AppiumConfig.initConfig(io.cucumber.java.Scenario)"
+            }
+          }
+        ],
+        "line": 37,
+        "name": "04 - User will get null response if set ID in negative value",
+        "description": "",
+        "id": "get-product-api;04---user-will-get-null-response-if-set-id-in-negative-value",
+        "after": [
+          {
+            "result": {
+              "duration": 1000000,
+              "status": "passed"
+            },
+            "match": {
+              "location": "AndroidDriverAppium.AppiumConfig.closeApps(io.cucumber.java.Scenario)"
+            }
+          }
+        ],
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 9000000,
+              "status": "passed"
+            },
+            "line": 38,
+            "name": "user prepare data for hitting get product endpoint by ID -1",
+            "match": {
+              "arguments": [
+                {
+                  "val": "-1",
+                  "offset": 57
+                }
+              ],
+              "location": "Tests.GetPorducts.user_prepare_data_for_hitting_get_product_endpoint_by_id(java.lang.String)"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 16376000000,
+              "status": "passed"
+            },
+            "line": 39,
+            "name": "user hit endpoint get product by ID tersebut",
+            "match": {
+              "location": "Tests.GetPorducts.user_hit_endpoint_get_product_by_id()"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 6000000,
+              "status": "passed"
+            },
+            "line": 40,
+            "name": "didapatkan http response code Get Product 200",
+            "match": {
+              "arguments": [
+                {
+                  "val": "200",
+                  "offset": 42
+                }
+              ],
+              "location": "Tests.GetPorducts.didapatkan_http_response_code_get_product(java.lang.Integer)"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 3000000,
+              "status": "passed"
+            },
+            "line": 41,
+            "name": "body response yang didapatkan adalah null",
+            "match": {
+              "location": "Tests.GetPorducts.body_response_yang_didapatkan_adalah_null()"
+            },
+            "keyword": "And "
+          }
+        ],
+        "tags": [
+          {
+            "name": "@getALLPorduct"
+          },
+          {
+            "name": "@TestCaseKey\u003dAPI-T4"
+          }
+        ]
+      },
+      {
+        "start_timestamp": "2021-12-23T09:38:14.630Z",
+        "before": [
+          {
+            "result": {
+              "status": "passed"
+            },
+            "match": {
+              "location": "AndroidDriverAppium.AppiumConfig.initConfig(io.cucumber.java.Scenario)"
+            }
+          }
+        ],
+        "line": 44,
+        "name": "05 - User will get null response if set ID in very big number (product id not exist)",
+        "description": "",
+        "id": "get-product-api;05---user-will-get-null-response-if-set-id-in-very-big-number-(product-id-not-exist)",
+        "after": [
+          {
+            "result": {
+              "status": "passed"
+            },
+            "match": {
+              "location": "AndroidDriverAppium.AppiumConfig.closeApps(io.cucumber.java.Scenario)"
+            }
+          }
+        ],
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 11000000,
+              "status": "passed"
+            },
+            "line": 45,
+            "name": "user prepare data for hitting get product endpoint by ID 99999999999",
+            "match": {
+              "arguments": [
+                {
+                  "val": "99999999999",
+                  "offset": 57
+                }
+              ],
+              "location": "Tests.GetPorducts.user_prepare_data_for_hitting_get_product_endpoint_by_id(java.lang.String)"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 30601000000,
+              "status": "passed"
+            },
+            "line": 46,
+            "name": "user hit endpoint get product by ID tersebut",
+            "match": {
+              "location": "Tests.GetPorducts.user_hit_endpoint_get_product_by_id()"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 6000000,
+              "status": "passed"
+            },
+            "line": 47,
+            "name": "didapatkan http response code Get Product 200",
+            "match": {
+              "arguments": [
+                {
+                  "val": "200",
+                  "offset": 42
+                }
+              ],
+              "location": "Tests.GetPorducts.didapatkan_http_response_code_get_product(java.lang.Integer)"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 1000000,
+              "status": "passed"
+            },
+            "line": 48,
+            "name": "body response yang didapatkan adalah null",
+            "match": {
+              "location": "Tests.GetPorducts.body_response_yang_didapatkan_adalah_null()"
+            },
+            "keyword": "And "
+          }
+        ],
+        "tags": [
+          {
+            "name": "@getALLPorduct"
+          },
+          {
+            "name": "@TestCaseKey\u003dAPI-T5"
+          }
+        ]
+      }
+    ],
+    "name": "Get Product API",
+    "description": "  As a User\n  I want to get All product list from BE side\n  So that FE side can visualize its response data",
+    "id": "get-product-api",
+    "keyword": "Feature",
+    "uri": "file:src/test/resources/features/fakestore/Get%20Product.feature",
+    "tags": [
+      {
+        "name": "@getALLPorduct",
+        "type": "Tag",
+        "location": {
+          "line": 1,
+          "column": 1
+        }
+      }
+    ]
+  }
+]

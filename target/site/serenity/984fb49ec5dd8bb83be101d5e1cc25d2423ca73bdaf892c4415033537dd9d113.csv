@@ -1,0 +1,2 @@
+"Story","Title","Result","Date","Stability","Duration (s)"
+"Register Amazon New User","04 - User can't continuing to next step of sign up if only one of mandatory field left empty","FAILURE","2021-12-23T16:42:34.018+07:00[Asia/Jakarta]","0.0","58.57"
